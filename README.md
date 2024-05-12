@@ -19,7 +19,7 @@ The Online Reporting System is a web-based platform designed to streamline the p
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/LaljiSankhat/city-issue-system.git`
+1. Clone the repository: `git clone https://github.com/LaljiSankhat/Online-Reporting.git`
 2. Navigate to the project directory: `cd Online-Reporting`
 3. Then navigate to the client and Server directories: `cd Server` and `cd client`
 4. Install dependencies: `npm install`
