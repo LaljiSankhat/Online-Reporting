@@ -79,7 +79,7 @@ const Navbar = () => {
         
 
         {/* Sign up and Login button */}
-        {authUser.role ? (
+        {authUser !== null ? (
           <div className="text-base text-primary font-medium space-x-5 hidden lg:block">
             {authUser.role === "user" && (
               <Link to="/profile" className="py-2 px-5 border rounded">
