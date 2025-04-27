@@ -39,6 +39,7 @@ const Navbar = () => {
     } else {
       setNavbar(navItems);
     }
+    console.log(isLoggedIn);
   }, [authUser]);
 
   return (
