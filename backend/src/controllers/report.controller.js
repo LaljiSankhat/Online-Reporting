@@ -2,6 +2,7 @@ import Report from "../models/report.model.js";
 import cloudinary from "../lib/cloudinary.js";
 import Feedback from "../models/feedback.model.js";
 import User from "../models/user.model.js";
+import mongoose  from "mongoose";
 
 export const postAnIssue = async (req, res) => {
   try {
@@ -145,6 +146,9 @@ export const getMyFeedbacks = async (req, res) => {
 export const getMyReports = async (req, res) => {
   try {
     const {id} = req.params;
+    if (!id || !mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ error: "Invalid report ID" });
+    }
     const reports = await Report.find({userId: id});
     res.status(200).json(reports);    
   } catch (error) {

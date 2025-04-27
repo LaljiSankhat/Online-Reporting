@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "The Online Reporting System is a web-based platform designed to streamline the process of reporting and resolving various civic issues within a city. Whether it's potholes, broken streetlights, or graffiti, citizens can easily report issues, and city authorities can efficiently manage and resolve them."
 }

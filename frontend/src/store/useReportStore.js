@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { axiosInstance } from "../lib/axios";
 import toast from "react-hot-toast";
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 
 export const useReportStore = create((set, get) => ({
   allReports: [],
@@ -71,9 +71,6 @@ export const useReportStore = create((set, get) => ({
 
   getMyReports: async (id) => {
     try {
-      if (!id || !mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(400).json({ error: "Invalid report ID" });
-      }
       const res = await axiosInstance.get(`/report/my-reports/${id}`);
       set({myReports: res.data});
       return res;

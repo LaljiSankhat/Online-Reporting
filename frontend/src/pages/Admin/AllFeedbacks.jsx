@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useReportStore } from "../../store/useReportStore";
-import { CgAsterisk } from "react-icons/cg";
 import { CircleX } from "lucide-react";
-import { set } from "mongoose";
 
 const AllFeedbacks = () => {
   const { getAllFeedbacks, feedbacks } = useReportStore();
