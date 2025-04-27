@@ -14,7 +14,6 @@ const AllFeedbacks = () => {
   useEffect(() => {
     // setIsLoading(true);
     getAllFeedbacks();
-    console.log(feedbacks);
     setAllFeedbacks(feedbacks);
     setIsLoading(false);
   }, [getAllFeedbacks]);
