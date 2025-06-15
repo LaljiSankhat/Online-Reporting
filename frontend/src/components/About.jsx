@@ -2,9 +2,6 @@ import React, { useState } from "react";
 
 const About = () => {
   const [readMore, setReadMore] = useState(false);
-  const handleReadMore = () => {
-    setReadMore(!readMore);
-  };
   return (
     <div>
       <div className="w-full h-screen flex lg:flex-row flex-col ">

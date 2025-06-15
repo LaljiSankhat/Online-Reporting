@@ -34,12 +34,12 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
+    console.log("Auth User:", authUser);
     if (authUser && authUser.role === "admin") {
       setNavbar(navItemsAdmin);
     } else {
       setNavbar(navItems);
     }
-    console.log(isLoggedIn);
   }, [authUser]);
 
   return (

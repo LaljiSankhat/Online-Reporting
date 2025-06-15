@@ -5,10 +5,11 @@ import { MapPinned } from "lucide-react"
 import IssueReport from "../components/IssueReport";
 import Feedback from "../components/Feedback";
 import About from "../components/About";
+import Footer from "../components/Footer";
 
 
 const HomePage = () => {
-    const {authUser, isLoggedIn } = useAuthStore();
+    const { authUser, isLoggedIn } = useAuthStore();
     
   return (
     <div data data-scroll data-scroll-speed="0.8" className="h-screen overflow-y-scroll scrollbar-hide">
