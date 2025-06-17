@@ -26,17 +26,30 @@ app.use(
 );
 
 
+// if(process.env.NODE_ENV === "production"){
+//   app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+//   })
+// }
+
+
+// app.use("/api/auth", authRoutes);
+// app.use("/api/report", reportRoutes)
+
+app.use("/api/auth", authRoutes);
+app.use("/api/report", reportRoutes);
+
+//  Serve static files AFTER API routes
 if(process.env.NODE_ENV === "production"){
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
+  // Fallback only for non-API routes
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
-  })
+  });
 }
-
-
-app.use("/api/auth", authRoutes);
-app.use("/api/report", reportRoutes)
 
 
 app.listen(PORT, () => {
