@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink  } from "react-router-dom";
 import { FaXmark, FaBarsStaggered } from "react-icons/fa6";
 import { useAuthStore } from "../store/useAuthStore";
 
 const Navbar = () => {
-    const {authUser, isLoggedIn, isCheckingAuth, logout } = useAuthStore();
+    const {authUser, isLoggedIn, logout } = useAuthStore();
     const handleScroll = (id) => {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     };
@@ -35,7 +35,7 @@ const Navbar = () => {
 
   useEffect(() => {
     console.log("Auth User:", authUser);
-    console.log(isLoggedIn)
+    console.log("is Logged in", isLoggedIn)
     if (authUser && authUser.role === "admin") {
       setNavbar(navItemsAdmin);
     } else {
