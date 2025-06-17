@@ -35,6 +35,7 @@ const Navbar = () => {
 
   useEffect(() => {
     console.log("Auth User:", authUser);
+    console.log(isLoggedIn)
     if (authUser && authUser.role === "admin") {
       setNavbar(navItemsAdmin);
     } else {
@@ -52,7 +53,7 @@ const Navbar = () => {
         </a>
 
         {/* nav items for large devices */}
-        {authUser && (<ul className="hidden md:flex gap-12">
+        {isLoggedIn && (<ul className="hidden md:flex gap-12">
           {Navbar.map(({ path, title, id }) => (
             <li key={path} className="text-base text-primary hover:underline">
               {id == "about" ? (
@@ -79,7 +80,7 @@ const Navbar = () => {
         
 
         {/* Sign up and Login button */}
-        {authUser !== null ? (
+        {isLoggedIn ? (
           <div className="text-base text-primary font-medium space-x-5 hidden lg:block">
             {authUser.role === "user" && (
               <Link to="/profile" className="py-2 px-5 border rounded">
