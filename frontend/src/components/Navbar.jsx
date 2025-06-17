@@ -52,7 +52,7 @@ const Navbar = () => {
         </a>
 
         {/* nav items for large devices */}
-        {isLoggedIn && (<ul className="hidden md:flex gap-12">
+        {authUser && (<ul className="hidden md:flex gap-12">
           {Navbar.map(({ path, title, id }) => (
             <li key={path} className="text-base text-primary hover:underline">
               {id == "about" ? (
